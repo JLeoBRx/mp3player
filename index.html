@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP3 Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #add8e6; /* Azul Claro */
+        }
+        button {
+            font-size: 16px;
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escute nossas Músicas Personalizadas:</h1>
+    <audio id="audioPlayer" src="sample.mp3"></audio>
+    <br>
+    <button onclick="playAudio()">▶ Play</button>
+    <button onclick="pauseAudio()">⏸ Pause</button>
+    <button onclick="restartAudio()">🔄 Reiniciar</button>
+
+    <script>
+        var audio = document.getElementById("audioPlayer");
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function pauseAudio() {
+            audio.pause();
+        }
+
+        function restartAudio() {
+            audio.currentTime = 0; // Reseta para o início
+            audio.play(); // Inicia a música novamente
+        }
+    </script>
+</body>
+</html>
