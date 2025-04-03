@@ -11,9 +11,12 @@
             margin: 20px;
             background-color: #add8e6; /* Azul Claro */
         }
+        .audio-block {
+            margin-bottom: 40px;
+        }
         button {
             font-size: 16px;
-            margin: 10px;
+            margin: 10px 5px;
             padding: 10px 20px;
             cursor: pointer;
         }
@@ -21,26 +24,54 @@
 </head>
 <body>
     <h1>Escute nossas Músicas Personalizadas:</h1>
-    <audio id="audioPlayer" src="sample.mp3"></audio>
-    <br>
-    <button onclick="playAudio()">▶ Play</button>
-    <button onclick="pauseAudio()">⏸ Pause</button>
-    <button onclick="restartAudio()">🔄 Reiniciar</button>
+
+    <div class="audio-block">
+        <h3>Corrí, caí na Coca - A música</h3>
+        <audio id="audioPlayer1" src="sample.mp3"></audio><br>
+        <button onclick="playAudio('audioPlayer1')">▶ Play</button>
+        <button onclick="pauseAudio('audioPlayer1')">⏸ Pause</button>
+        <button onclick="restartAudio('audioPlayer1')">🔄 Reiniciar</button>
+    </div>
+
+    <div class="audio-block">
+        <h3>Notáveis: Xuxa</h3>
+        <audio id="audioPlayer2" src="xuxa.mp3"></audio><br>
+        <button onclick="playAudio('audioPlayer2')">▶ Play</button>
+        <button onclick="pauseAudio('audioPlayer2')">⏸ Pause</button>
+        <button onclick="restartAudio('audioPlayer2')">🔄 Reiniciar</button>
+    </div>
+
+    <div class="audio-block">
+        <h3>Notáveis: Natalino</h3>
+        <audio id="audioPlayer3" src="natal.mp3"></audio><br>
+        <button onclick="playAudio('audioPlayer3')">▶ Play</button>
+        <button onclick="pauseAudio('audioPlayer3')">⏸ Pause</button>
+        <button onclick="restartAudio('audioPlayer3')">🔄 Reiniciar</button>
+    </div>
+
+    <div class="audio-block">
+        <h3>Notáveis: Funk</h3>
+        <audio id="audioPlayer4" src="funk.mp3"></audio><br>
+        <button onclick="playAudio('audioPlayer4')">▶ Play</button>
+        <button onclick="pauseAudio('audioPlayer4')">⏸ Pause</button>
+        <button onclick="restartAudio('audioPlayer4')">🔄 Reiniciar</button>
+    </div>
 
     <script>
-        var audio = document.getElementById("audioPlayer");
-
-        function playAudio() {
+        function playAudio(id) {
+            const audio = document.getElementById(id);
             audio.play();
         }
 
-        function pauseAudio() {
+        function pauseAudio(id) {
+            const audio = document.getElementById(id);
             audio.pause();
         }
 
-        function restartAudio() {
-            audio.currentTime = 0; // Reseta para o início
-            audio.play(); // Inicia a música novamente
+        function restartAudio(id) {
+            const audio = document.getElementById(id);
+            audio.currentTime = 0;
+            audio.play();
         }
     </script>
 </body>
